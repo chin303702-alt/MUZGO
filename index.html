@@ -1,0 +1,110 @@
+
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2026 新春求好籤！紅包馬上到</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@400;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'newyear-red': '#D9381E',
+                        'newyear-gold': '#F2A900',
+                        'cream-bg': '#FDFBF7',
+                    },
+                    fontFamily: {
+                        serif: ['"Noto Serif TC"', 'serif'],
+                    },
+                    animation: {
+                        'pulse-slow': 'pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+                        'shake': 'shake 0.5s cubic-bezier(.36,.07,.19,.97) both infinite',
+                        'float': 'float 3s ease-in-out infinite',
+                        'hand-pick': 'handPick 2s ease-in-out infinite',
+                        'stick-rise': 'stickRise 2s ease-in-out infinite',
+                    },
+                    keyframes: {
+                        shake: {
+                            '10%, 90%': { transform: 'translate3d(-1px, 0, 0) rotate(-1deg)' },
+                            '20%, 80%': { transform: 'translate3d(2px, 0, 0) rotate(1deg)' },
+                            '30%, 50%, 70%': { transform: 'translate3d(-2px, 0, 0) rotate(-2deg)' },
+                            '40%, 60%': { transform: 'translate3d(2px, 0, 0) rotate(2deg)' },
+                        },
+                        float: {
+                            '0%, 100%': { transform: 'translateY(0)' },
+                            '50%': { transform: 'translateY(-10px)' },
+                        },
+                        handPick: {
+                            '0%': { transform: 'translate(-40px, -40px) rotate(0deg)' },
+                            '30%': { transform: 'translate(40px, -40px) rotate(10deg)' },
+                            '60%': { transform: 'translate(0px, 0px) rotate(-10deg)' },
+                            '80%': { transform: 'translate(0px, -60px) rotate(0deg)' },
+                            '100%': { transform: 'translate(-40px, -40px) rotate(0deg)' },
+                        },
+                        stickRise: {
+                            '0%, 50%': { transform: 'translateY(0)' },
+                            '60%': { transform: 'translateY(-40px)' },
+                            '80%': { transform: 'translateY(-50px)' },
+                            '100%': { transform: 'translateY(0)' },
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body {
+            background-color: #FDFBF7;
+            font-family: 'Noto Serif TC', serif;
+            overflow-x: hidden;
+        }
+        .chinese-border {
+            border: 4px double #F2A900;
+            position: relative;
+        }
+        .chinese-border::before, .chinese-border::after {
+            content: "🧧";
+            position: absolute;
+            font-size: 1.5rem;
+        }
+        .chinese-border::before { top: -15px; left: -15px; }
+        .chinese-border::after { bottom: -15px; right: -15px; }
+
+        .hidden-screen {
+            display: none !important;
+        }
+
+        .fortune-paper {
+            background-image: radial-gradient(#fff9e6 1px, transparent 0);
+            background-size: 20px 20px;
+        }
+
+        @keyframes drawOut {
+            0% { transform: translateY(100%) scale(0.5); opacity: 0; }
+            100% { transform: translateY(0) scale(1); opacity: 1; }
+        }
+        .animate-draw {
+            animation: drawOut 0.8s ease-out forwards;
+        }
+    </style>
+<script type="importmap">
+{
+  "imports": {
+    "react": "https://esm.sh/react@^19.2.4",
+    "react/": "https://esm.sh/react@^19.2.4/",
+    "react-dom/": "https://esm.sh/react-dom@^19.2.4/"
+  }
+}
+</script>
+<link rel="stylesheet" href="/index.css">
+</head>
+<body class="min-h-screen flex items-center justify-center p-4">
+    <div id="root" class="w-full max-w-md mx-auto"></div>
+    <script type="module" src="index.tsx"></script>
+<script type="module" src="/index.tsx"></script>
+</body>
+</html>
